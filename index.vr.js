@@ -6,17 +6,26 @@ import {
   Pano,
   Text,
   View,
-} from 'react-vr';
+  Sphere,
+  Model
+} from 'react-vr'
 
 export default class WelcomeToVR extends React.Component {
-  render() {
+  render () {
     return (
-      <View>
+      <View style={{}}>
         <Pano source={asset('chess-world.jpg')}/>
+        <Model
+          source={{
+            obj: asset('canon_jouet.obj'),
+            mtl: asset('canon_jouet.mtl')
+          }}
+          style={{position: 'absolute', transform: [{translate: [0, 0, -6]}]}}
+        />
         <Text
           style={{
-            backgroundColor: '#777879',
-            fontSize: 0.8,
+            backgroundColor: 'orange',
+            fontSize: 0.5,
             fontWeight: '400',
             layoutOrigin: [0.5, 0.5],
             paddingLeft: 0.2,
@@ -25,11 +34,12 @@ export default class WelcomeToVR extends React.Component {
             textAlignVertical: 'center',
             transform: [{translate: [0, 0, -3]}],
           }}>
-          hello
+          Cathy's Test App
         </Text>
-      </View>
-    );
-  }
-};
 
-AppRegistry.registerComponent('WelcomeToVR', () => WelcomeToVR);
+      </View>
+    )
+  }
+}
+
+AppRegistry.registerComponent('WelcomeToVR', () => WelcomeToVR)
