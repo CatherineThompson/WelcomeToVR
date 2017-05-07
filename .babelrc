@@ -2,7 +2,7 @@
   "presets": ["react-native", "react-native-stage-0/decorator-support"],
   "env": {
     "developmet": {
-      "plugins": ["transform-react-jsx-source", "transform-flow-strip-types"]
+      "plugins": ["transform-react-jsx-source"]
     }
   }
 }

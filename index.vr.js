@@ -2,9 +2,7 @@ import React from 'react'
 import {
   AppRegistry,
   asset,
-  StyleSheet,
   Pano,
-  Text,
   View,
   Model
 } from 'react-vr'
@@ -20,7 +18,7 @@ export default class WelcomeToVR extends React.Component {
   render () {
     return (
       <View style={{}}>
-        <Pano source={asset('chess-world.jpg')}/>
+        <Pano source={asset('simple_surface.jpg')}/>
         <Model
           source={{
             obj: asset('canon_jouet.obj'),
@@ -35,6 +33,7 @@ export default class WelcomeToVR extends React.Component {
               { scale: 0.13 }
             ]
           }}
+          onEnter={() => this.setState({angle: 20})}
         />
         <Model
           source={{
@@ -55,18 +54,3 @@ export default class WelcomeToVR extends React.Component {
 }
 
 AppRegistry.registerComponent('WelcomeToVR', () => WelcomeToVR)
-
-/* <Text
-  style={{
-    backgroundColor: 'orange',
-    fontSize: 0.5,
-    fontWeight: '400',
-    layoutOrigin: [0.5, 0.5],
-    paddingLeft: 0.2,
-    paddingRight: 0.2,
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    transform: [{translate: [0, 0, -3]}],
-  }}>
-  Cathy's Test App
-</Text> */
